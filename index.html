@@ -141,6 +141,17 @@
         th {
             background-color: #f2f2f2;
         }
+        .map-container {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 200px;
+            height: 200px;
+            background-color: white;
+            padding: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 9998;
+        }
     </style>
 </head>
 <body>
@@ -251,10 +262,12 @@
         
     </div>
     
+    <div class="map-container">
+        <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=080808&w=200&t=tt&d=4VplLLIX4jzBrhnf1ANh9AQbJ_LfRJujnMihYuR_RSc&co=ffffff&ct=808080&cmo=3acc3a&cmn=ff5353'></script>
+    </div>
+    
     <footer>
         <p id="footer-text">&copy; 2025 Mingbao Lin. All rights reserved. | Contact: linmb001@outlook.com</p>
-    <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=080808&w=200&t=tt&d=4VplLLIX4jzBrhnf1ANh9AQbJ_LfRJujnMihYuR_RSc&co=ffffff&ct=808080&cmo=3acc3a&cmn=ff5353'></script>
     </footer>
-    
 </body>
 </html>
