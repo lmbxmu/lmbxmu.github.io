@@ -1,81 +1,260 @@
 <!DOCTYPE html>
-<br><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <meta content="IE=5.0000" http-equiv="X-UA-Compatible">
-  <meta name="description" content="MingBao Lin&#39;s home page">
-  <meta name="keywords" content="林明宝, Mingbao Lin" />
-  
-  <link href="./imgs/tlzdoc.css" rel="stylesheet" type="text/css">
-  <title>Mingbao Lin's Homepage--林明宝的个人主页</title>
-  <meta name="GENERATOR" content="MSHTML 11.00.10570.1001">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Homepage</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const elements = document.querySelectorAll("[data-en]");
+            elements.forEach(el => {
+                el.innerText = el.getAttribute("data-en");
+            });
+            document.getElementById("lang-toggle").innerText = "切换到中文";
+            document.documentElement.lang = "en";
+            // Initialize footer text
+            updateFooterText();
+        });
+
+        function toggleLanguage() {
+            const elements = document.querySelectorAll("[data-en]");
+            let isEnglish = document.documentElement.lang === "en";
+            
+            elements.forEach(el => {
+                el.innerText = isEnglish ? el.getAttribute("data-zh") : el.getAttribute("data-en");
+            });
+            
+            document.getElementById("lang-toggle").innerText = isEnglish ? "Switch to English" : "切换到中文";
+            document.documentElement.lang = isEnglish ? "zh-CN" : "en";
+            // Update footer text when language is toggled
+            updateFooterText();
+        }
+
+        function updateFooterText() {
+            const footerText = document.documentElement.lang === "en" 
+                ? "&copy; 2025 Mingbao Lin. All rights reserved. | Contact: linmb001@outlook.com" 
+                : "&copy; 2025 林明宝. 保留所有权利。 | 联系方式: linmb001@outlook.com";
+            document.getElementById("footer-text").innerHTML = footerText;
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: #333;
+            margin-top: 120px;
+            padding-bottom: 60px;
+            font-size: 16px;
+        }
+        .navbar {
+            background-color: #d3d3d3;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 9999;
+            padding: 10px 0;
+        }
+        .navbar a, .navbar button {
+            color: black;
+        }
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin-top: 0;
+        }
+        .section-title {
+            color: #2575fc;
+            font-weight: bold;
+        }
+        .profile-img {
+            width: 100%;
+            max-width: 200px;
+            border-radius: 50%;
+        }
+        .icon-links {
+            margin-top: 10px;
+            display: flex;
+            justify-content: space-around;
+        }
+        .icon-links a {
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0 5px;
+        }
+        .icon-links img {
+            width: 40px;
+        }
+        .icon-links span {
+            font-size: 14px;
+            color: #333;
+            margin-top: 3px;
+        }
+        footer {
+            background-color: #343a40;
+            color: white;
+            padding: 0.1px 20px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            z-index: 9999;
+        }
+        footer span {
+            font-size: 14px;
+        }
+        .publication-list {
+            margin-top: 20px;
+        }
+        .publication-item {
+            margin-bottom: 20px;
+        }
+        .publication-title {
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        .publication-authors {
+            font-style: italic;
+            color: #555;
+        }
+        .publication-info {
+            margin-top: 5px;
+            color: #777;
+        }
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
 </head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#" data-zh="学术主页" data-en="Academic Homepage">Academic Homepage</a>
+            <button id="lang-toggle" class="btn btn-light" onclick="toggleLanguage()">切换到中文</button>
+        </div>
+    </nav>
+    
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-4 text-center">
+                <img src="profile.jpg" class="profile-img" alt="Personal Photo">
+                <h3 class="mt-3" data-zh="林明宝" data-en="Mingbao Lin">Mingbao Lin</h3>
+                <p class="text-muted" data-zh="博士 | 研究员 | 计算机科学" data-en="PhD | Researcher | Computer Science">PhD | Researcher | Computer Science</p>
+                <div class="icon-links">
+                    <a href="mailto:linmb001@outlook.com" title="Email">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/d/df/Microsoft_Office_Outlook_%282018%E2%80%93present%29.svg" alt="Outlook Email">
+                        <span data-zh="邮件" data-en="Email">邮件</span>
+                    </a>
+                    <a href="https://scholar.google.com/citations?user=Dp3L1bsAAAAJ&hl=en&oi=ao" target="_blank" title="Google Scholar">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Google_Scholar_logo.svg" alt="Google Scholar">
+                        <span data-zh="学术" data-en="Scholar">学术</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/mingbao-lin-890444105/" target="_blank" title="LinkedIn">
+                        <img src="https://cdn.worldvectorlogo.com/logos/linkedin-icon-2.svg" alt="LinkedIn">
+                        <span data-zh="领英" data-en="LinkedIn">领英</span>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <h4 class="section-title" data-zh="个人简介" data-en="About Me">About Me</h4>
+                <p data-zh="我是某大学计算机科学系的研究员，主要研究方向包括人工智能、机器学习和数据挖掘。" 
+                   data-en="I am a researcher in the Department of Computer Science at a university, focusing on artificial intelligence, machine learning, and data mining.">
+                   I am a researcher in the Department of Computer Science at a university, focusing on artificial intelligence, machine learning, and data mining.</p>
+            </div>
+        </div>
+        
+        <hr>
 
+        <h4 class="section-title" data-zh="研究方向" data-en="Research Interests">Research Interests</h4>
+        <ul>
+            <li data-zh="人工智能" data-en="Artificial Intelligence">Artificial Intelligence</li>
+            <li data-zh="机器学习" data-en="Machine Learning">Machine Learning</li>
+            <li data-zh="计算机视觉" data-en="Computer Vision">Computer Vision</li>
+        </ul>
 
-<br>
-  <br id="layout-content" style="margin-top: 25px;">
-  <table>
-    <tbody>
-    <tr>
-      <td width="670">
-        <div id="toptitle">
-        <h1>&nbsp;&nbsp;&nbsp; Mingbao Lin &nbsp; 林明宝<a name="top"></a></h1>
-		</div>
-         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Research Scientist <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Kunlun 2050 Research | Skywork AI<br><br>
-         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Industry Supervisor <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AI Institute | Xiamen University<br>
-        <p>
-        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Email: linmb001[at]outlook[dot]com <br>
-        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Publications: <a href="https://scholar.google.com/citations?user=Dp3L1bsAAAAJ&hl=en&oi=ao" target="_blank">[Google Scholar]</See>	
-	    <br><br></p>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <!--<font color="red">updated on 31/03/2024</font> -->
-      </td>
-    </tr>
-	</tbody>
-  </table>
+        <hr>
 
-<h2>Working Experiences<a name="biography"></a></h2>
-<ul>  
-  <li> 2024 -- Now: Research Scientist, <a href="https://www.kunlun.com/research/en/index.html" target = "_blank">Kunlun 2050  Research</a> | Skywork AI led by <a href="https://yanshuicheng.info/" target = "_blank">Shuicheng Yan</a>, Singapore 
-	<div style="font-size: small;">
-    Low-latency Multimodal Interaction System (text, audio, image, video, <i>etc</i>.) <br>
-    Foundation Model Training、AI Infra、3D Reconstruction <br>
-  </div>
-  </li>
+        <h4 class="section-title" data-zh="发表论文" data-en="Publications">Publications</h4>
+        
+        <!-- 2024 Year Publications Table -->
+        <h5>2024</h5>
+        <table>
+            <thead>
+                <tr>
+                    <th data-zh="标题" data-en="Title">Title</th>
+                    <th data-zh="作者" data-en="Authors">Authors</th>
+                    <th data-zh="发表位置" data-en="Published In">Published In</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>LLMs-as-Instructors: Learning from Errors Toward Automating Model Improvement</td>
+                    <td>Mingbao Lin, Author 2, Author 3</td>
+                    <td>Conference on Machine Learning</td>
+                </tr>
+                <tr>
+                    <td>Boosting Multimodal Large Language Models with Visual Tokens Withdrawal for Rapid Inference</td>
+                    <td>Mingbao Lin, Author 2, Author 3</td>
+                    <td>IEEE Transactions on Neural Networks</td>
+                </tr>
+                <tr>
+                    <td>UniVST: A Unified Framework for Training-free Localized Video Style Transfer</td>
+                    <td>Mingbao Lin, Author 2, Author 3</td>
+                    <td>International Conference on Computer Vision</td>
+                </tr>
+            </tbody>
+        </table>
 
-  <li>
-  2024 -- Now: Industry Supervisor, <a href="https://iai.xmu.edu.cn/" target = "_blank">AI Institute</a> | Xiamen University led by <a href="https://mac.xmu.edu.cn/rrji/" target = "_blank">Rongrong Ji</a>, Xiamen, China
-	<div style="font-size: small;">
-		Multimodal Model (MLLM, Diffusion) for multimodal tasks (Training-Free/Tuning-Efficient Editting) </br>
-		Model Compression/Inference Acceleration/Training Efficiency on CV (ViT, <i>etc</i>.), NLP (LLM <i>etc</i>.) and Multimodal (MLLM, Diffusion  <i>etc</i>.) models.
-	</div> 
-  </li>
-
-  <li> 2022 -- 2024: Senior Researcher, <a href="https://open.youtu.qq.com/#/open", target="_blank">Youtu Lab</a> | Tencent, Shanghai, China 
-	<div style="font-size: small;">
-		Large Language Model (LLM) for general NLP tasks (Foundation Model Training, Downstream Applications) </br>
-		Model Compression on CV (CNN, ViT, <i>etc</i>.) and NLP (Bert, <i>etc</i>.) models for general tasks (Recognition, OCR, <i>etc</i>.)
-	</div> 
-  </li>
-  
-  <li> 2019 -- 2022: Research Intern, <a href = "https://www.pcl.ac.cn/index.html", target="_blank">Peng Cheng Lab</a>, Shenzhen, China 
-	<div style="font-size: small;">
-		Model Compression (Quantization, Pruning, Sparsity, Distillation, <i>etc</i>.) on general CV models (CNN, ViT) </br>
-		Low-level CV (Super-Resolution, Shadow Removal, Demoir&eacuteing, <i>etc</i>.)
-	</div> 
-  </li>
-</ul>
-
-<h2>Education Experiences<a name="biography"></a></h2>
-<ul>
-  <li> 2016 -- 2022: M.S.-Ph.D. in Comput. Sci., <a href="https://mac.xmu.edu.cn/"  target="_blank">MAC Lab</a> led by <a href="https://mac.xmu.edu.cn/rrji/"   target="_blank">Rongrong Ji</a>, Xiamen University, China
-	<div style="font-size: small;">
-	    Model Compression (Quantization, Pruning, Sparsity, Distillation, <i>etc</i>.) on general CV models (CNN, ViT) </br>
-		Low-level CV (Super-Resolution, Shadow Removal, Demoir&eacuteing, <i>etc</i>.) </br>
-		Image/text retrieval
-	</div> 
-  </li>
-  <li> 2012 -- 2016: B.S. in Comput. Sci., Fuzhou University, Fuzhou, China </li>
-</ul>
-
-</div>
-</div>
+        <!-- 2023 Year Publications Table -->
+        <br>
+        <h5>2023</h5>
+        <table>
+            <thead>
+                <tr>
+                    <th data-zh="标题" data-en="Title">Title</th>
+                    <th data-zh="作者" data-en="Authors">Authors</th>
+                    <th data-zh="发表位置" data-en="Published In">Published In</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>ObjectAdd: Adding Objects into Image Via a Training-Free Diffusion Modification Fashion</td>
+                    <td>Mingbao Lin, Author 2, Author 3</td>
+                    <td>Neural Information Processing Systems</td>
+                </tr>
+                <tr>
+                    <td>CutDiffusion: A Simple, Fast, Cheap, and Strong Diffusion Extrapolation Method</td>
+                    <td>Mingbao Lin, Author 2, Author 3</td>
+                    <td>International Journal of Computer Vision</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <hr>
+        
+    </div>
+    
+    <footer>
+        <p id="footer-text">&copy; 2025 Mingbao Lin. All rights reserved. | Contact: linmb001@outlook.com</p>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
