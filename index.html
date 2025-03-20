@@ -11,7 +11,7 @@
         document.addEventListener("DOMContentLoaded", function() {
             const elements = document.querySelectorAll("[data-en]");
             elements.forEach(el => {
-                el.innerText = el.getAttribute("data-en");
+                el.innerHTML = el.getAttribute("data-en");
             });
             document.getElementById("lang-toggle").innerText = "切换到中文";
             document.documentElement.lang = "en";
@@ -24,7 +24,7 @@
             let isEnglish = document.documentElement.lang === "en";
             
             elements.forEach(el => {
-                el.innerText = isEnglish ? el.getAttribute("data-zh") : el.getAttribute("data-en");
+                el.innerHTML = isEnglish ? el.getAttribute("data-zh") : el.getAttribute("data-en");
             });
             
             document.getElementById("lang-toggle").innerText = isEnglish ? "Switch to English" : "切换到中文";
